@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" ng-app="filterApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body ng-controller="mainCtrl">
+<input type="text" ng-model="peopleFilter.name" placeholder="filter by name"/>
+<input type="text" ng-model="peopleFilter.email" placeholder="filter by email"/>
+<input type="text" ng-model="peopleFilter.dateEmployed" placeholder="filter by date employed"/>
+<input type="text" ng-model="peopleFilter.phone " placeholder="filter by phone#"/>
+<div ng-repeat="x in people | filter: peopleFilter">
+    <ul>
+        <li>{{x.name}}</li>
+        <li> {{x.email}}</li>
+        <li>{{x.dateEmployed}}</li>
+        <li>{{x.phone}}</li>
+    </ul>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.js"></script>
+<script src="app.js"></script>
+<script src="controller.js"></script>
+<script src="service.js"></script>
+
+</body>
+</html>
